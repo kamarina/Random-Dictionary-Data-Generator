@@ -1,34 +1,34 @@
 import json
 import random
 
-def generate_random_data(items):
-    # Initialize an empty dictionary to store random data
-    random_data = {}
+def generate_data(items):
+    # Create a dictionary to store generated data
+    data = {}
 
-    # Iterate over each item
-    for item in items:
-        # Initialize a nested dictionary for each item
-        random_data[item] = {}
+    # Iterate over items
+    for i in items:
+        # Create a nested dictionary for items
+        data[i] = {}
 
-        # Iterate over each related item
+        # Iterate over related items
         for related_item in items:
-            # Ensure the item and related_item are different
-            if item != related_item:
-                # Assign a random value (you can customize this based on your needs)
-                random_data[item][related_item] = random.randint(300, 1000)
+            # Ensure  related_item is not the same as item
+            if i != related_item:
+                # Assign random values (the range and values are fully customizable)
+                data[i][related_item] = random.randint(300, 900)
 
-    # Return the generated random data dictionary
-    return random_data
+    # Return a dictionary with randomly generated content
+    return data
 
-# List of items (you can add more as needed)
+# Create a list to store items that will serve as keys in your dictionaries
 items_list = ["Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"]
 
-# Generate random data for the given list of items
-random_data = generate_random_data(items_list)
+# Generate random contents for the items defined in a list
+data = generate_data(items_list)
 
-# Save random data to a file
-filename = "random_data.json"
+# Save generated data to a .json file
+filename = "random.json"
 with open(filename, 'w') as file:
-    json.dump(random_data, file, indent=2)
+    json.dump(data, file, indent=3)
 
-print(f"Random data have been saved to '{filename}'")
+print(f"Your generated data have been saved to '{filename}'")
