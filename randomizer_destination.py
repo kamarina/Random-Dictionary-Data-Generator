@@ -2,40 +2,40 @@ import json
 import random
 
 
-# Function to generate random flight costs for a given list of cities
-def generate_flight_costs(cities):
-    # Initialize an empty dictionary to store flight costs
+# Function that generates random flight costs based on a defined list of cities
+def random_flight_costs(cities):
+    # Initialize a dictionary to store generated flight costs
     flight_costs = {}
 
-    # Iterate over each departure city
-    for departure_city in cities:
-        # Initialize a nested dictionary for each departure city
-        flight_costs[departure_city] = {}
+    # Iterate over departure cities
+    for departure in cities:
+        # Initialize a nested dictionary for every departure city on the cities list
+        flight_costs[departure] = {}
 
-        # Iterate over each destination city
-        for destination_city in cities:
-            # Ensure the departure and destination cities are different
-            if departure_city != destination_city:
-                # Assign a random flight cost between 300 and 1000
-                flight_costs[departure_city][destination_city] = random.randint(300, 1000)
+        # Iterate over destination cities
+        for destination in cities:
+            # Ensure the  destination city doesn't equal the departure city
+            if departure != destination:
+                # Randomize fright cost in a range from 300 and 1200
+                flight_costs[departure][destination] = random.randint(300, 1200)
 
-    # Return the generated flight costs dictionary
+    # Return the flight costs dictionary
     return flight_costs
 
 
-# List of cities (you can add more as needed)
+# List of cities (can be modified)
 cities = ["New York", "Los Angeles", "Paris", "Tokyo", "London", "Sydney", "London", "Dubai", "Ankara", "Delhi",
           "Shanghai", "São Paulo", "Mumbai", "Beijing", "Cairo", "Dhaka", "Mexico City", "Osaka", "Karachi",
-          "Chongqing",
+          "Chongqing", "Birmingham",
           "Istanbul", "Kolkata", "Lahore", "Shenzhen", "Mumbai", "Kinshasa", "Tianjin", "Lima", "Mumbai", "Bangkok",
           "Kyiv", "Berlin", "Toronto", "Budapest", "Leuven", "Dublin"]
 
-# Generate random flight costs for the given list of cities
-flight_costs = generate_flight_costs(cities)
+# Generate the flight costs for the list of the cities declared
+flight_costs = random_flight_costs(cities)
 
-# Save flight costs to a file
+# Save generated data to an output file
 filename = "flight_costs.json"
 with open(filename, 'w') as file:
     json.dump(flight_costs, file, indent=2)
 
-print("Flight costs have been saved to 'flight_costs.json'")
+print("Randomized flight costs have been saved to 'flight_costs.json'")
