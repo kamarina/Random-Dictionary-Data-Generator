@@ -34,7 +34,9 @@ data = generate_data(items_list)
 
 # Save generated data to a .json file
 filename = "random.json"
-with open(filename, 'w') as file:
-    json.dump(data, file, indent=3)
-
-print(f"Your generated data have been saved to '{filename}'")
+try:
+    with open(filename, 'w') as file:
+        json.dump(data, file, indent=3)
+    print(f"Your generated data have been saved to '{filename}'")
+except IOERROR as e:
+    print(f"Failed to write data to {filename}: {e}")
