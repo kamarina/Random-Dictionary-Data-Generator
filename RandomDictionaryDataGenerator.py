@@ -1,9 +1,15 @@
 import json
 import random
+from typing import List, Dict
 
-def generate_data(items):
-    # Create a dictionary to store generated data
-    data = {}
+def generate_data(items: List[str], min_value: int = 300, max_value: int = 900):
+    # Create a dictionary nested dictionary with random values for related items
+    data = {
+        item: {
+            related_item: random.randint(min_value, max_value)
+            for related_item in items if item != related_item
+        } for item in items
+    }
 
     # Iterate over items
     for i in items:
