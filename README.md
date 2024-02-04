@@ -1,6 +1,6 @@
-# RandomDictionaryDataGenerator
+# Random-Dictionary-Data-Generator
 
-The **'RandomDictionaryDataGenerator'** script is designed to generate randomized dictionaries, offering a valuable tool for testing program functionality. It provides realistic yet random data, particularly useful for testing programs and methods when the authentic data source is unavailable. 
+The **'Random Dictionar Data Generator'** script is designed to generate randomized dictionaries, offering a valuable tool for testing program functionality. It provides realistic yet random data, particularly useful for testing programs and methods when the authentic data source is unavailable. 
 
 I developed this script when implementing one of my Bootcamp tasks to simulate real-world conditions and make sure my program showcases how user-defined functions work in diverse scenarios.
 
